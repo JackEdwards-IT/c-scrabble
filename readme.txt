@@ -1,10 +1,8 @@
 /******************************************************************************
  * Student Name    :    Jack Edwards
  * RMIT Student ID :    S3727853
- *
- * Startup code provided by Paul Miller for use in "Programming in C",
- * Assignment 2, study period 2, 2020.
  *****************************************************************************/
+
 How do we use your program? 
 ---------------------------
 
@@ -33,16 +31,4 @@ player at this stage to ensure their word does not intersect any letters other
 than the first letter.
 
 
-
-Explain your reasoning behind the modifications you have made to the design of 
-the program
-------------------------------------------------------------------------------
-
-The game struct in game.h has had the letter_list element changed to score_list
-as I belive that was what was intended and letter_list is a typo.
-
-I have added in an extra field to the cell struct in board.h. This new field is 
-an integer that holds the cells letter score. This has been done to
-simplify a players score calculation, as every cell that a player owns now
-has its point value associated with it.
 

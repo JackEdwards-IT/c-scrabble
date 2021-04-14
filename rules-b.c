@@ -1,10 +1,3 @@
-/******************************************************************************
- * Student Name    :    Jack Edwards
- * RMIT Student ID :    S3727853
- *
- * Startup code provided by Paul Miller for use in "Programming in C",
- * Assignment 2, study period 4, 2020.
- *****************************************************************************/
 #include "rules-b.h"
 #include "game.h"
 #include "score_list.h"
@@ -13,9 +6,6 @@
 #include <ctype.h>
 #include <string.h>
 
-/**
- *
- **/
 BOOLEAN validate_move(struct player* theplayer, const char* word,
                       const struct coord* coords, enum orientation orient) {
 

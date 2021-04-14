@@ -4,9 +4,9 @@ This is a two player text based (command line) scrabble game. The focus of the p
 
 Two files are to be passed into the game on startup:
     
-    - The word scores. This is essentially a text file equivilant of all of the scrabble tiles   containg the amount of each letters to be present in the game and the amount of points each one is worth.
+    The word scores. This is essentially a text file equivilant of all of the scrabble tiles   containg the amount of each letters to be present in the game and the amount of points each one is worth.
 
-    - Dictionary file, all players words are checked against this file which is loaded into the game as a linked list. If the players word does not exist in the dictionary then the word is demmed invalid and the player will need to try a differn't word.
+    Dictionary file, all players words are checked against this file which is loaded into the game as a linked list. If the players word does not exist in the dictionary then the word is demmed invalid and the player will need to try a differn't word.
 
 ## Compiling manually
 
@@ -20,7 +20,7 @@ Note the following arguments can be ommitted:
 
 ## Useing the makefile
 
-
+Todo
 
 ## Checking for memory leaks with Valgrind
 
