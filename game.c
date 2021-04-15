@@ -12,7 +12,7 @@ BOOLEAN game_init(struct game *thegame) {
     struct board *the_board;
     BOOLEAN board_size_valid = FALSE;
     /*get and intialise players*/
-    if (!add_players()) {
+    if (!add_players(thegame)) {
         return FALSE;
     }
 
@@ -89,7 +89,7 @@ void play_game(const char *scoresfile) {
             case MOVE_SUCCESS:
                 printf(
                     "\nWell done, that move was successful! %s's new score"
-                    " is %d",
+                    " is %d\n",
                     thegame.players[thegame.curr_player_num].name,
                     thegame.players[thegame.curr_player_num].score);
                 break;
@@ -110,6 +110,7 @@ void play_game(const char *scoresfile) {
     }
 }
 
+/* This will free all memory that has been allocated by a fully initilised game*/
 void free_memory(struct game *thegame) {
     int height_count, i, height;
 
@@ -119,10 +120,12 @@ void free_memory(struct game *thegame) {
     /*free players hand*/
     for (i = 0; i < MAX_PLAYERS; i++) {
         free(thegame->players[i].hand);
-        /* free(thegame->players[i].name); */
     }
+    
 
     for (height_count = 0; height_count < height; ++height_count) {
         free(thegame->theboard->matrix[height_count]);
     }
+    free(thegame->theboard->matrix);
+    free(thegame->theboard);
 }

@@ -13,16 +13,16 @@ and utilise. (as per assignment specs).
 The initial prompts require the players names and the board size. The minimum 
 size is 5, and the max size is defined in board.h (50).
 
-A player is chosen to random to start the game. To skip a turn press enter on
+A player is chosen at random to start the game. To skip a turn press enter on
 an emptyline. To exit press CTRL-D (EOF).
 
 The initial word can be placed anywere on the board as long as it fits and the
 player has all of the letters for it in their hand.
 
 Subsequent turns require that the first letter of the word they wish to place 
-to already exist on the board. (it is therfore not required to be in their hand)
+already exist on the board. (it is therfore not required to be in their hand)
 
-Words can only flow horizontall to the left of existing letters or down
+Words can only flow horizontaly to the left of existing letters or down
 vertically from existing letters.
 
 NOTE: due to assignment time constraints the game only validates the first

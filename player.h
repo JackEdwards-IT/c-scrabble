@@ -21,13 +21,7 @@ enum color {
     COL_RESET
 };
 
-/*Enum for input operations*/
-enum input_result {
-    IR_FAILURE,
-    IR_SUCCESS,
-    IR_EMPTYLINE,
-    IR_EOF = -1
-};
+
 
 /* global variable that holds the colour codes that can be used for formatting
  * strings */
@@ -45,10 +39,7 @@ struct player {
 };
 
 void print_hand(struct player ptr);
-char *strdup(const char *);
 BOOLEAN add_players();
-enum input_result read_int_keyboard(int *ptr);
-enum input_result read_string_keyboard(char *string[]);
-BOOLEAN player_init(struct player *, const char *, struct game *);
+BOOLEAN player_init(const char *, struct game *, int playerNum);
 enum move_result player_turn(struct player *);
 #endif

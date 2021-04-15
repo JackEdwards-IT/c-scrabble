@@ -10,8 +10,6 @@ struct game {
     int curr_player_num;
     struct board* theboard;
     struct score_list* score_list;
-    /*I believe the below is a typo*/
-    /*struct letter_list* score_list;*/
 };
 
 void free_memory(struct game* thegame);
