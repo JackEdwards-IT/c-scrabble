@@ -126,10 +126,12 @@ enum commands process_command(char *command, char *return_word) {
 
 void print_help(void) {
     printf(
-        "\n------------------ Game Help -------------------------"
+        "\n---------------------- Game Help ----------------------------"
         "\nTo play a word simply type the word and press enter. "
         "\nTo exit press enter on an emptyline or CTRL-D"
         "\n---------------------- Commands -----------------------------\n"
+    );
+    printf(
         "Please note 'word' is your input after the command.\n"
         "To check if a word is in the dictionary type :check word\n"
         "To add word to dictionary type :add word\n"

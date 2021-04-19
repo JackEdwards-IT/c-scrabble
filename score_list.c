@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
 #include "score_list.h"
 #include "shared.h"
-#include "limits.h"
 #include "player.h"
 
 /**

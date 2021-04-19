@@ -32,7 +32,6 @@ letter is on the board and will overwrite letters in its path. It is upto the
 player at this stage to ensure their word does not intersect any letters other
 than the first letter.
 
-
 ## Compiling Manually
 
 To compile the game use: `gcc -ansi -Wall -pedantic -g board.c game.c player.c io.c rules-b.c score_list.c word_list.c wuzzle.c commands.c -o c-scrabble`
@@ -45,7 +44,11 @@ Note the following arguments can be omitted:
 
 ## Using the makefile
 
-Todo
+To compile the game automatically type in `make` in the projects root. This builds the executable with the name c-scrabble and runs the same build command as above complete with debuging symbols.
+
+To clean the directory and remove all object files and the executable type `make clean`
+
+Note: You must have the make build automation utility installed to use the make command.
 
 ## Checking for memory leaks with Valgrind
 

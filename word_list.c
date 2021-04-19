@@ -1,6 +1,5 @@
 #include "word_list.h"
 #include "score_list.h"
-
 #include "shared.h"
 #include <stdio.h>
 #include <stdlib.h>

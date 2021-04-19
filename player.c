@@ -7,6 +7,7 @@
 #include "word_list.h"
 #include "io.h"
 #include "game.h"
+
 /* the color_strings array that defines the color codes for the printing */
 char *color_strings[] = {"\033[0;31m", "\033[0;32m", "\033[0;33m", "\033[0;34m",
                          "\033[0;35m", "\033[0;36m", "\033[0m"};

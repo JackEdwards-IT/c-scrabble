@@ -81,7 +81,7 @@ void play_game(const char *scoresfile, const char *dictionary) {
     }
 
     if (init) {
-        printf("\nWelcome to Word Game in C.\n");
+        printf("\nWelcome to Word Game in C. For list of commands type :help\n");
     }
 
     /* Game Loop*/

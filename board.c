@@ -1,10 +1,9 @@
-#include "board.h"
-#include "player.h"
-
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "board.h"
+#include "player.h"
 
 /*clear buffer method*/
 static void clear_buffer(void) {
