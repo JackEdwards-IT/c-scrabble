@@ -1,8 +1,9 @@
 # Scrabble Like Game in C
 
-This is a two player text based (command line) scrabble like game. The focus of the project is on proper memory management and adhering to the ANSI C90 standards.
+This is a two player text based (command line) scrabble like game. The focus of the project is on proper memory management and adhering to the ANSI C standards.
 
-Please note this is more a technical excercise than a fully featured game. See game rules for more info.
+Please note this is more a technical excercise than a fully featured game. See game rules for more info or the [Project Overview](https://docs.google.com/viewer?url=https://github.com/JackEdwards-IT/c-scrabble/raw/main/Project-Overview.pdf)
+
 
 Two files are to be passed into the game on startup:
     
@@ -56,4 +57,4 @@ Note: You must have the make build automation utility installed to use the make 
 
 ## Running the game
 
-Once the game is compiled to run `./c-scrabble word_scores word_list` where word_scores and words5_100 are the two files passed into the game. This could be a path to the files if they are in a different folder.
+Once the game is compiled to run `./c-scrabble word_scores words5_100` where word_scores and words5_100 are the two files passed into the game. This could be a path to the files if they are in a different folder.
