@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-
 #include "game.h"
 
 int main(int argc, char* argv[]) {
@@ -13,9 +12,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    play_game(argv[1]);
-    /* check the command line args and then pass the appropriate arg to
-     * play_game()
-     **/
+    play_game(argv[1], argv[2]);
+    /* check the command line args and then pass to game*/
     return EXIT_SUCCESS;
 }

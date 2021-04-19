@@ -2,7 +2,7 @@
 
 This is a two player text based (command line) scrabble like game. The focus of the project is on proper memory management and adhering to the ANSI C90 standards.
 
-Please note this is more a technical excercise than a fully featured game. See game Rules for more info.
+Please note this is more a technical excercise than a fully featured game. See game rules for more info.
 
 Two files are to be passed into the game on startup:
     
@@ -25,7 +25,7 @@ Subsequent turns require that the first letter of the word they wish to place
 already exist on the board. (it is therefore not required to be in their hand)
 
 Words can only flow horizontally to the left of existing letters or down
-vertically from existing letters.
+vertically from existing letters. 
 
 NOTE: due to assignment time constraints the game only validates the first
 letter is on the board and will overwrite letters in its path. It is upto the 
@@ -35,7 +35,7 @@ than the first letter.
 
 ## Compiling Manually
 
-To compile the game use: `gcc -ansi -Wall -pedantic -g board.c game.c player.c io.c rules-b.c score_list.c wuzzle.c -o c-scrabble`
+To compile the game use: `gcc -ansi -Wall -pedantic -g board.c game.c player.c io.c rules-b.c score_list.c word_list.c wuzzle.c commands.c -o c-scrabble`
 
 Note the following arguments can be omitted:
 
@@ -49,8 +49,8 @@ Todo
 
 ## Checking for memory leaks with Valgrind
 
-`valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./c-scrabble word_scores word_list`
+`valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./c-scrabble word_scores words5_100`
 
 ## Running the game
 
-Once the game is compiled to run `./c-scrabble word_scores word_list` where word_scores and word_list are the two files passed into the game. This could be a path to the files if they are in a different folder.
+Once the game is compiled to run `./c-scrabble word_scores word_list` where word_scores and words5_100 are the two files passed into the game. This could be a path to the files if they are in a different folder.

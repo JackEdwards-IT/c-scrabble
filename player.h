@@ -6,7 +6,6 @@
 /* the maximum length of a player's name */
 #define NAMELEN 40
 #define EXTRACHARS 2
-
 #define HAND_SIZE 5
 /**
  * enumeration that defines the colours that can be used for players
@@ -21,11 +20,10 @@ enum color {
     COL_RESET
 };
 
-
-
 /* global variable that holds the colour codes that can be used for formatting
  * strings */
 extern char *color_strings[];
+
 
 /**
  * definition of the player structure.

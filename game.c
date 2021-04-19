@@ -1,12 +1,11 @@
 #include "game.h"
 #include "player.h"
-
 #include "score_list.h"
+#include "word_list.h"
 #include <stdio.h>
 #include <stdlib.h>
-/**
- * initialise the game
- **/
+
+/* initialise the game */
 BOOLEAN game_init(struct game *thegame) {
     int board_width, board_height, coin;
     struct board *the_board;
@@ -37,14 +36,13 @@ BOOLEAN game_init(struct game *thegame) {
     return TRUE;
 }
 
-/**
- * Initilise the game and manage players turns
- **/
-void play_game(const char *scoresfile) {
+/* Initilise the game and manage players turns */
+void play_game(const char *scoresfile, const char *dictionary) {
     BOOLEAN quit = FALSE;
     BOOLEAN init = TRUE;
     struct game thegame;
     struct score_list *letters;
+    struct word_list *dictionary_words;
     int i;
 
     /*Load in letters*/
@@ -53,7 +51,25 @@ void play_game(const char *scoresfile) {
         quit = TRUE;
         init = FALSE;
     }
+    /* assign the letters/scores to the game*/
     thegame.score_list = letters;
+
+    /*Allocate memory for dictionary*/
+    dictionary_words = calloc(1, sizeof(struct word_list));
+    if(!dictionary_words){
+        perror("Memory Allocation failed");
+        quit = TRUE;
+        init = FALSE;
+    }
+
+    /*Load in dictionary*/
+    if(!load_dictionary(dictionary, dictionary_words)){
+        printf("\nError loading dictionary file\n");
+        quit = TRUE;
+        init = FALSE;
+    }
+    /*assign dictionary to game*/
+    thegame.dictionary_words = dictionary_words;
 
     /* CALL GAME_INIT*/
     if (!quit) {
@@ -65,7 +81,7 @@ void play_game(const char *scoresfile) {
     }
 
     if (init) {
-        printf("\nWelcome to Wuzzle.\n");
+        printf("\nWelcome to Word Game in C.\n");
     }
 
     /* Game Loop*/
@@ -121,11 +137,14 @@ void free_memory(struct game *thegame) {
     for (i = 0; i < MAX_PLAYERS; i++) {
         free(thegame->players[i].hand);
     }
-    
-
+    /*Free the board*/    
     for (height_count = 0; height_count < height; ++height_count) {
         free(thegame->theboard->matrix[height_count]);
     }
     free(thegame->theboard->matrix);
     free(thegame->theboard);
+    
+    /*Free the dictionarys linked list*/
+    list_free(thegame->dictionary_words);
+    free(thegame->dictionary_words);
 }

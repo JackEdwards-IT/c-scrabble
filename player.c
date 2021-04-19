@@ -1,22 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "commands.h"
 #include "player.h"
 #include "score_list.h"
+#include "word_list.h"
 #include "io.h"
-
 #include "game.h"
-/* the color_strings array that defines the color codes for the printing
- * out colour in the terminal. The order of the values in this array is the
- * same as the color enum
- **/
+/* the color_strings array that defines the color codes for the printing */
 char *color_strings[] = {"\033[0;31m", "\033[0;32m", "\033[0;33m", "\033[0;34m",
                          "\033[0;35m", "\033[0;36m", "\033[0m"};
 
-
 /**
  * prompt the user for their name and deal the letters for the player to start
- * with. Also assign the game pointer so we can access it later.
+ * with.
  **/
 
 BOOLEAN add_players(struct game *thegame) {
@@ -25,7 +22,6 @@ BOOLEAN add_players(struct game *thegame) {
     BOOLEAN player_error = FALSE;
 
     while (count < MAX_PLAYERS && !player_error) {
-
         /*struct player *theplayer;*/
         struct score_list *hand;
         enum input_result result = IR_FAILURE;
@@ -93,11 +89,7 @@ void print_hand(struct player theplayer) {
     printf("\n");
 }
 
-
-
-/**
- * play a move for this player. 
- **/
+/* play a move for this player. */
 enum move_result player_turn(struct player *theplayer) {
     char *word[NAMELEN + EXTRACHARS];
     char *orientation[1 + EXTRACHARS];
@@ -117,9 +109,8 @@ enum move_result player_turn(struct player *theplayer) {
             case IR_EOF:
                 return MOVE_QUIT;
             case IR_COMMAND:
-                /**
-                 * TODO
-                 * **/
+                /* Pass the command word and reference to game to the command function*/
+                command(*word, theplayer->curgame);
             case IR_SUCCESS:
                 break;
             case IR_FAILURE:
@@ -140,7 +131,6 @@ enum move_result player_turn(struct player *theplayer) {
                 result = IR_FAILURE;
                 printf("\nRow outside of gameboard, try again:");
             }
-    
         }
     }
 
@@ -157,7 +147,6 @@ enum move_result player_turn(struct player *theplayer) {
                 result = IR_FAILURE;
                 printf("\nColumn outside of gameboard, try again:");
             }
-       
         }
     }
 
@@ -191,4 +180,3 @@ enum move_result player_turn(struct player *theplayer) {
     }
     return MOVE_SUCCESS;
 }
-

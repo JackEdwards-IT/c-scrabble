@@ -8,7 +8,7 @@
 #include <assert.h>
 #include <ctype.h>
 
-/* create the functions for the management of the linked list in this file */
+/* create the functions for the management of the linked list */
 BOOLEAN load_dictionary(const char *filename, struct word_list *list) {
     FILE *fp;
     char line[WORD_LENGTH + EXTRA_CHARS];
@@ -17,8 +17,7 @@ BOOLEAN load_dictionary(const char *filename, struct word_list *list) {
     int i;
 
     fp = fopen(filename, "r");
-    if (fp == NULL) {
-
+    if (fp == NULL) {   
         return FALSE;
     }
 
@@ -82,12 +81,6 @@ BOOLEAN check_letters(char *token) {
     return TRUE;
 }
 
-/******************************************************************************
-* CODE REFERENCE
-* Linked List is based on code provided by Paul Miller in the week 7 & 8
-* tutorial sessions.
-******************************************************************************/
-
 /* Initialise a new list*/
 void list_init(struct word_list *list) {
     assert(list);
@@ -131,7 +124,7 @@ BOOLEAN list_add(struct word_list *list, const char *word) {
     }
     strcpy(word_alloc, word);
 
-    /*set the word pointer in the struct to point to the word. The word */
+    /*set the word pointer in the struct to point to the word*/
     new->word = word_alloc;
     new->next = NULL;
 
@@ -229,7 +222,7 @@ BOOLEAN save_out(struct word_list *list, char *filename) {
 
     /*Check file opened correctly*/
     if (fp == NULL) {
-        printf("\nError: Problem writing to file. check filename.\n");
+        printf("\nError: Problem writing to file. Check filename.\n");
         return FALSE;
     }
 
@@ -247,7 +240,7 @@ BOOLEAN save_out(struct word_list *list, char *filename) {
 
 /**
  * tests whether the word specified is in the word_list and therefore a valid
- * spelling. Please see the assignment specification for further details.
+ * spelling.
  **/
 BOOLEAN is_in_dictionary(struct word_list *thelist, const char *word) {
     struct word_node *current = NULL;
@@ -261,7 +254,7 @@ BOOLEAN is_in_dictionary(struct word_list *thelist, const char *word) {
         ;
     }
     if (!current) {
-        printf("\nError: Word not found.\n");
+        printf("\nThe word '%s' is not in the dictionary\n", word);
         return FALSE;
     }
 
